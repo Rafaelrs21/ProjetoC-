@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Projeto_Teste_MVC.Models.AmigoModel>
+
+@{
+    ViewData["Title"] = "AmigoAniversariante";
+}
+
+<h1>Lista de aniversariantes</h1>
+
+<p>
+    <a href="/Amigo/AdicionarAmigo">Criar novo</a>
+</p>
+
+<p>
+    <a href="/Amigo/ListarAmigo">Voltar</a>
+</p>
+
+<form action=" /Listas/AmigoAniversariante" method="get">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Aniversario</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var amigo in Model)
+            {
+                <tr>
+                    <td>@amigo.Nome</td>
+                    <td>@amigo.Sobrenome</td>
+                    <td>@amigo.Idade</td>
+                    <td>@amigo.Aniversario</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+<form action=" /Listas/Aniversariante" method="get">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Aniversario</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var amigo in Model)
+            {
+                <tr>
+                    <td>@amigo.Nome</td>
+                    <td>@amigo.Sobrenome</td>
+                    <td>@amigo.Idade</td>
+                    <td>@amigo.Aniversario</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,49 @@
+﻿@model AmigoModel
+
+@{
+    ViewData["Title"] = "EditarAmigo";
+}
+
+<h1>EditarAmigo</h1>
+
+<h4>AmigoModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditarAmigo" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="id" value="@Model.Id"/>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" name="nome" value="@Model.Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sobrenome" class="control-label"></label>
+                <input asp-for="Sobrenome" name="sobrenome" value="@Model.Sobrenome" class="form-control" />
+                <span asp-validation-for="Sobrenome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idade" class="control-label"></label>
+                <input asp-for="Idade" name="idade" value="@Model.Idade" class="form-control" />
+                <span asp-validation-for="Idade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aniversario" class="control-label"></label>
+                <input asp-for="Aniversario" name="aniversario" value="@Model.Aniversario" class="form-control" />
+                <span asp-validation-for="Aniversario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input href="/Amigo/ListarAmigo" type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div> 
+    <a href="/Amigo/ListarAmigo">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

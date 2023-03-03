@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Projeto_Teste_MVC.Models.AmigoModel>
+
+@{
+    ViewData["Title"] = "ListarAmigo";
+}
+
+<h1>ListarAmigo</h1>
+
+<form action="/Amigo/ListarAmigo" method="get">
+    <input type="text" name="pesquisa" placeholder="Pesquisa" />
+    <input type="submit" value="pesquisar" />
+</form>
+
+<p>
+    <a href="/Amigo/AdicionarAmigo">Criar novo</a>
+</p>
+
+<p>
+    <a href="/Listas/AmigoAniversariante">Listas</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Aniversario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var amigo in Model)
+        {
+            <tr>
+                <td>@amigo.Nome</td>
+                <td>@amigo.Sobrenome</td>
+                <td>@amigo.Idade</td>
+                <td>@amigo.Aniversario</td>
+                <td>
+                    <a href="/Amigo/EditarAmigo?id=@amigo.Id">Editar</a> |
+                    <a href="/Amigo/VizualizarAmigo?id=@amigo.Id">Visualizar</a> |
+                    <a href="/Amigo/DeletarAmigo?id=@amigo.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿@model Projeto_Teste_MVC.Models.AmigoModel
+
+@{
+    ViewData["Title"] = "DeletarAmigo";
+}
+
+<h1>DeletarAmigo</h1>
+
+<h3>Deletar ou não deletar, eis a cuestão</h3>
+<div>
+    <h4>AmigoModel</h4>
+    <hr />
+    <form action="/Amigo/DeletarAmigoPost?id=@Model.Id" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        Identificador: @Model.Id <br />
+        Nome: @Model.Nome<br />
+        Sobrenome: @Model.Sobrenome<br />
+        Idade: @Model.Idade<br />
+        Aniversario: @Model.Aniversario<br />
+        <input type="submit" value="Confirmar exclusão" /><br />
+        <a href="/Amigo/ListarAmigo">voltar para lista de Amigo</a>
+    </form>
+</div>
